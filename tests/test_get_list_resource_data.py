@@ -46,3 +46,4 @@ def test_single_resource():
 def test_resource_not_found():
     response = httpx.get(BASE_URL + SINGLE_RESOURCE_NOT_FOUND)
     assert response.status_code == 404
+
