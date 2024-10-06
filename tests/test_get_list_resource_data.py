@@ -40,13 +40,19 @@ def test_single_resource():
     response = httpx.get(BASE_URL + SINGLE_RESOURCE)
     assert response.status_code == 200
     data = response.json()['data']
-    # print(data['name']) вывод ключа
     assert data['color'].startswith(COLOR_START)
     assert PANTONE in data['pantone_value']
 
 def test_resource_not_found():
     response = httpx.get(BASE_URL + SINGLE_RESOURCE_NOT_FOUND)
     assert response.status_code == 404
+
+
+
+
+
+
+
 
 
 
