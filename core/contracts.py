@@ -30,3 +30,21 @@ UPDATE_USER_SCHEME = {
     },
     "required": [ ] # порядок перечисление НЕ важен
 }
+
+REGISTERED_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "number"}, #  Обязательное поле
+        "token": {"type": "string"} #  Обязательное поле
+    },
+    "required": ["id","token"] # порядок перечисление НЕ важен
+}
+
+LOGIN_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "token": {"type": "string"} #  Обязательное поле
+    },
+    "required": ["token"] # порядок перечисление НЕ важен
+}
+

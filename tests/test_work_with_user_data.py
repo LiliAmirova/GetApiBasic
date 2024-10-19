@@ -19,7 +19,7 @@ def test_create_user_with_name_and_job():
     with allure.step(f'Делаем запрос по адресу: {BASE_URL + CREATE_USER}'):
         response = httpx.post(BASE_URL + CREATE_USER, json=body)
         #print(response.json())
-    with allure.step(f'Проверяем код ответа'):
+    with allure.step(f'Проверяем код ответа')
         assert response.status_code == 201  # проверка код ответа
 
     response_json = response.json()
