@@ -22,8 +22,9 @@ users_data = json.load(json_file)
 @allure.title('Проверяем Register - successful')
 @pytest.mark.parametrize('users_data', users_data)
 def test_successful_register(users_data):
+    headers = {'Content-Type': 'application/json'}      # Заголовки и передача заголовков
     with allure.step(f'Отправляем запрос по адресу: {BASE_URL + REGISTER_USER}'):
-        response = httpx.post(BASE_URL + REGISTER_USER, json=users_data)
+        response = httpx.post(BASE_URL + REGISTER_USER, json=users_data, headers=headers)
         #print(users_data)
     with allure.step(f'Проверяем код ответа'):
         assert response.status_code == 200
